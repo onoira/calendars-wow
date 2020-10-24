@@ -1,0 +1,125 @@
+%YAML 1.2
+---
+__events:
+  - &gnomeregan  -9
+  - &thirdwar   -18
+  - &secondwar  -26
+__groups:
+  # Races:
+  - &gnomes gnomes
+# - &kaldorei kaldorei
+  - &queldorei quel'dorei
+  - &rendorei ren'dorei
+  - &sindorei sin'dorei
+  # Nations:
+  - &azeroth Azeroth
+  - &alterac Alterac
+  - &arathor Arathor
+  - &gilneas Gilneas
+  - &kultiras Kul Tiras
+  - &quelthalas Quel'Thalas
+  # Organisations
+  - &galliance Grand Alliance
+  - &lalliance Alliance of Lordaeron
+  - &church Church of the Holy Light
+
+data:
+
+  - id: &lotharian lotharian
+    name: Lotharian
+    info:
+      users: [*galliance]
+      initiator: Varian Wrynn of Azeroth
+      namesake: Anduin Lothar, Supreme Commander of the Alliance of Lordaeron
+    referenceYear: 40
+    affixPositive: ["Lotharian Calendar",  'L.C.']
+    affixNegative: [&pc "Præ Calendarium", 'P.C.']
+
+  - id: &gnomish gnomish
+    name: Gnomish
+    info:
+      _succeededBy: [*lotharian, *gnomeregan]
+      users: [*gnomes]
+      initiator: Gnomeregan Ruling Council
+      notes: Obsolete at the destruction of Gnomeregan.
+    referenceYear: 407
+    affixPositive: ["Gnomish Calendar", 'G.C.']
+
+  - id: &king king
+    name: King's
+    info:
+      _succeededBy: [*lotharian, *thirdwar]
+      users: [*azeroth]
+      initiator: Anduin Wrynn
+      notes: Used socially among older humans.
+    referenceYear: 630
+    affixPositive: ["King's Calendar", 'K.C.']
+    affixNegative: [*pc, 'P.C.']
+
+  - id: &aderician aderician
+    name: Aderician
+    info:
+      _succeededBy: [*lotharian, *thirdwar]
+      users: [*gilneas]
+      initiator: &aderic King Aderic I of Free Gilneas
+      namesake: *aderic
+    referenceYear: 2_837  # 1152 F.A.
+    eras:
+      - 1685:      ["Following Aderic",        'F.A.']
+      - 0:         ["Under Arathorian Rule", 'U.A.R.']
+    affixPositive: ["Pre-Dawn Gilneas",      'P.D.G.']
+
+  - id: &admiral admiral
+    name: Admiral's
+    info:
+      users: [*kultiras]
+      initiator: &lordadmiral Lord Admiral Daelin Proudmore
+      namesake: *lordadmiral
+    referenceYear: 2_028
+    affixPositive: ["Lord Admiral's Calendar", 'L.A.C.']
+
+  - id: &thoradine thoradine
+    name: Thoradine
+    info:
+      _succeededBy: [*lotharian, *thirdwar]
+      users: [*arathor, *church, *lalliance]
+      initiator: &thoradin King Thoradin of Arathor
+      namesake: *thoradin
+      notes: Official ecclesiastical calendar of the Church.
+    referenceYear: 2_808
+    affixPositive: ["A'no Dominæum", 'A.D.']
+    affixNegative: [*pc, 'P.C.']
+
+  - id: &perenolde perenolde
+    name: Perenolde
+    info:
+      _succeededBy: [*lotharian, *secondwar]
+      users: [*alterac]
+      initiator: Nicholas Perenolde I
+      namesake: Perenolde lineage
+    referenceYear: 2_742  # 26 A.A.
+    eras:
+      - 2716:      ["Alterac in Anarchy", 'A.A.']
+      - 1600:      ["Kingdom of Alterac", 'K.A.']
+      - 0:         ["Imperial Era",       'I.E.']
+    affixPositive: ["Before Arathor",     'B.A.']
+
+  - id: &thalassian thalassian
+    name: Thalassian
+    info:
+      users: [*queldorei, *sindorei, *rendorei]
+      notes: Used socially among the quel'dorei, sin'dorei and ren'dorei.
+    referenceYear: 6_841
+    affixPositive: ["Year of the Sunwell", 'Y.S.']
+
+  - id: &kaldorei kaldorei
+    name: Kaldorei
+    info:
+      _succeededBy: [*lotharian, *thirdwar]
+      users: [*kaldorei]
+      notes: Used socially among Darnassians and older kaldorei.
+    referenceYear: 10_040
+    affixPositive: ["Post Sundering",    ':PS']
+    affixNegative: ["Before Sundering", 'B.S.']
+
+_index: [*kaldorei, *thalassian, *perenolde, *thoradine, *admiral, *aderician, *king, *gnomish, *lotharian]
