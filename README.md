@@ -20,6 +20,8 @@ You can validate the YAML using the included validation script:
     # Run the validator:
     validate.py path/to/file.yml
 
+You are also welcome to [start a discussion](https://github.com/onoira/calendars-wow/discussions).
+
 ## References
 
 - ["Timeline"](https://wow.gamepedia.com/Timeline). Wowpedia.
